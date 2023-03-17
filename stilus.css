@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+main {
+    margin: auto;
+    width: 80%;
+}
+img{
+    width: 100%;
+    
+}
+section {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+div{
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+/*responzivitás*/
