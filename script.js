@@ -39,6 +39,7 @@ function osszeAllit() {
   for (let index = 0; index < KEPEKLISTA.length; index++) {
     txt += `<div><img src="kepek/hatter.jpg" alt="" id="${index}"></div>`;
   }
+  kartyaFelcsereles();
   //console.log(txt);
   return txt;
 }
@@ -78,20 +79,18 @@ function visszaFordit() {
 function velszamGen() {
   let velSzam = Math.floor(Math.random() * (KEPEKLISTA.length + 1));
   //console.log(velSzam);
-
   return velSzam;
 }
 
 function kartyaFelcsereles(params) {
-
-  let aktKep;
-  aktKep = FELSOKEPEK.eq(KIVALASZTOTTKEPEK[1]);
   let index = 0;
-  while (index < KEPEKLISTA.length) {
+
+  while (index < KEPEKLISTA.length - 1) {
     //megcserélni két random sorszámú kép sorszámát
-    
+    let velszam = velszamGen; //emiatt marad meg az elem értéke, és nem veszik el
+    let aktLap = KEPEKLISTA[velszam];
+    KEPEKLISTA[velszam] = KEPEKLISTA[index];
+    KEPEKLISTA[index] = aktLap;
     index++;
   }
-  
-
 }
