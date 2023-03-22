@@ -30,6 +30,7 @@ $(function () {
    * add hozzá az eseménykezelős*/
   const FELSOKEPEK = $("#felso img");
   FELSOKEPEK.on("click", kepreKattintas);
+  velszamGen();
 });
 
 function osszeAllit() {
@@ -50,16 +51,15 @@ function kepreKattintas() {
   KIVALASZTOTTKEPEK.push($(aktKep).attr("id"));
 
   db++;
+
   if (db == 2) {
     db = 0;
-    visszaFordit();    
+    visszaFordit();
   }
 }
 
 function visszaFordit() {
-  /**visszaállítjuk az src a háttérre, amelyikre kattintottunk
-   *
-   */
+  /**visszaállítjuk az src a háttérre, amelyikre kattintottunk*/
   console.log(KIVALASZTOTTKEPEK);
 
   setTimeout(function () {
@@ -75,4 +75,23 @@ function visszaFordit() {
   }, 1000);
 }
 
+function velszamGen() {
+  let velSzam = Math.floor(Math.random() * (KEPEKLISTA.length + 1));
+  //console.log(velSzam);
 
+  return velSzam;
+}
+
+function kartyaFelcsereles(params) {
+
+  let aktKep;
+  aktKep = FELSOKEPEK.eq(KIVALASZTOTTKEPEK[1]);
+  let index = 0;
+  while (index < KEPEKLISTA.length) {
+    //megcserélni két random sorszámú kép sorszámát
+    
+    index++;
+  }
+  
+
+}
